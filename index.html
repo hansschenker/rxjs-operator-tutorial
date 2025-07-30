@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RxJS Operator Tutorial</title>
+    <style>
+      :root { --gap: 1rem; }
+      body { font-family: system-ui, sans-serif; padding: 1.25rem; line-height: 1.45; }
+      h1, h2 { margin: 0 0 .5rem 0; }
+      section { border: 1px solid #e5e7eb; padding: 1rem; border-radius: .75rem; margin-top: var(--gap); }
+      .row { display: flex; gap: var(--gap); align-items: center; flex-wrap: wrap; }
+      button { padding: .5rem .75rem; }
+      .log { white-space: pre-wrap; border: 1px solid #ddd; padding: .75rem; min-height: 4rem; flex: 1; }
+      #fePatternArea { width: 260px; height: 130px; border: 1px dashed #bbb; display: inline-flex; align-items: center; justify-content: center; user-select: none; }
+      .small { color: #6b7280; font-size: .9rem; }
+      code { background: #f3f4f6; padding: .1rem .3rem; border-radius: .3rem; }
+    </style>
+  
+<style>
+  .hero-banner {
+    background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+    color: white;
+    text-align: center;
+    padding: 2em 1em;
+    border-radius: 12px;
+    margin-bottom: 1.5em;
+  }
+  .hero-banner h1 {
+    margin: 0;
+    font-size: 2.2em;
+  }
+  .hero-banner p {
+    margin: 0.5em 0 1em;
+    font-size: 1.2em;
+  }
+  .hero-banner a {
+    background: white;
+    color: #0ea5e9;
+    font-weight: bold;
+    padding: 0.8em 1.5em;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .hero-banner a:hover {
+    background: #e0f2fe;
+  }
+</style>
+
+
+<style>
+  .sidebar {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    width: 180px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1em;
+    font-size: 0.9em;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .sidebar h3 {
+    margin-top: 0;
+    font-size: 1em;
+    text-align: center;
+    color: #0369a1;
+  }
+  .sidebar a {
+    display: block;
+    color: #0ea5e9;
+    text-decoration: none;
+    margin: 0.2em 0;
+  }
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  body {
+    margin-left: 200px;
+  }
+</style>
+
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  .sidebar a.active {
+    font-weight: bold;
+    color: #0369a1;
+    text-decoration: underline;
+  }
+</style>
+
+</head>
+  <body>
+    <h1>RxJS Operator Tutorial</h1>
+    <p class="small">Browser‑first, pure RxJS + TypeScript + HTML. Each section mounts a demo and logs events.</p>
+
+    <h2>Session 1 — Events & Patterns</h2>
+    <section>
+      <h3>fromEvent</h3>
+      <div class="row">
+        <button id="fromEventBtn">Click me</button>
+        <div id="fromEventLog" class="log"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>fromEventPattern</h3>
+      <div class="row">
+        <div id="fePatternArea">Move mouse here</div>
+        <div id="fePatternLog" class="log"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>bindCallback</h3>
+      <div class="row">
+        <button id="bindCallbackBtn">Load preference</button>
+        <div id="bindCallbackLog" class="log"></div>
+      </div>
+    </section>
+
+    <h2>Session 2 — Time & Scheduling</h2>
+    <section>
+      <h3>interval</h3>
+      <div class="row">
+        <button id="intervalStartBtn">Start interval</button>
+        <div id="intervalLog" class="log"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>timer</h3>
+      <div class="row">
+        <button id="timerStartBtn">Start timer</button>
+        <div id="timerLog" class="log"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>generate</h3>
+      <div class="row">
+        <button id="generateStartBtn">Start generate</button>
+        <div id="generateLog" class="log"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>range</h3>
+      <div class="row">
+        <button id="rangeStartBtn">Start range</button>
+        <div id="rangeLog" class="log"></div>
+      </div>
+    </section>
+
+<section>
+  <h2>from</h2>
+  <div class="row">
+    <button id="fromRun">Run</button>
+    <div id="fromLog" class="log"></div>
+  </div>
+  <p class="small">Converts arrays, Promises, iterables into Observables.</p>
+</section>
+
+<section>
+  <h2>of</h2>
+  <div class="row">
+    <button id="ofRun">Run</button>
+    <div id="ofLog" class="log"></div>
+  </div>
+  <p class="small">Emits provided values sequentially and completes.</p>
+</section>
+
+<section>
+  <h2>defer</h2>
+  <div class="row">
+    <button id="deferRun">Run multiple times</button>
+    <div id="deferLog" class="log"></div>
+  </div>
+  <p class="small">Factory that builds a fresh Observable on each subscription.</p>
+</section>
+
+<section>
+  <h2>iif</h2>
+  <div class="row">
+    <button id="iifRun">Toggle branch</button>
+    <div id="iifLog" class="log"></div>
+  </div>
+  <p class="small">Conditionally choose one of two Observables at subscribe time.</p>
+</section>
+
+<section>
+  <h2>ajax</h2>
+  <div class="row">
+    <button id="ajaxRun">Fetch data</button>
+    <div id="ajaxLog" class="log"></div>
+  </div>
+  <p class="small">Makes an HTTP request and emits the AjaxResponse or error.</p>
+</section>
+
+<section>
+  <h2>throwError</h2>
+  <div class="row">
+    <button id="throwRun">Trigger error</button>
+    <div id="throwLog" class="log"></div>
+  </div>
+  <p class="small">Emits no values, just errors immediately. Use for fail-fast flows.</p>
+</section>
+
+<section>
+  <h2>EMPTY</h2>
+  <div class="row">
+    <button id="emptyRun">Subscribe</button>
+    <div id="emptyLog" class="log"></div>
+  </div>
+  <p class="small">Emits nothing and completes immediately. Useful for no-op branches.</p>
+</section>
+
+<section>
+  <h2>combineLatest</h2>
+  <div class="row">
+    <input id="clInputA" placeholder="A" />
+    <input id="clInputB" placeholder="B" />
+    <div id="clLog" class="log"></div>
+  </div>
+  <p class="small">Emits latest values from both inputs whenever any changes (after both have emitted once).</p>
+</section>
+
+<section>
+  <h2>merge</h2>
+  <div class="row">
+    <button id="mergeBtn1">Btn1</button>
+    <button id="mergeBtn2">Btn2</button>
+    <div id="mergeLog" class="log"></div>
+  </div>
+  <p class="small">Merges values from both buttons as they are clicked.</p>
+</section>
+
+<section>
+  <h2>concat</h2>
+  <div class="row">
+    <button id="concatRun">Run</button>
+    <div id="concatLog" class="log"></div>
+  </div>
+  <p class="small">Runs two Observables sequentially, only starting the second after the first completes.</p>
+</section>
+
+<section>
+  <h2>forkJoin</h2>
+  <div class="row">
+    <button id="forkJoinRun">Run</button>
+    <div id="forkJoinLog" class="log"></div>
+  </div>
+  <p class="small">Waits for all Observables to complete and emits last values.</p>
+</section>
+
+<section>
+  <h2>zip</h2>
+  <div class="row">
+    <button id="zipRun">Run</button>
+    <div id="zipLog" class="log"></div>
+  </div>
+  <p class="small">Pairs up values by index from multiple Observables.</p>
+</section>
+
+<section>
+  <h2>race</h2>
+  <div class="row">
+    <button id="raceRun">Run</button>
+    <div id="raceLog" class="log"></div>
+  </div>
+  <p class="small">Emits from the first Observable to emit, unsubscribing from the rest.</p>
+</section>
+
+<section>
+  <h2>partition</h2>
+  <div class="row">
+    <button id="partitionRun">Run</button>
+    <div id="partitionTrueLog" class="log"></div>
+    <div id="partitionFalseLog" class="log"></div>
+  </div>
+  <p class="small">Splits a source Observable into two based on a predicate.</p>
+</section>
+
+<section>
+  <h2>Buffer Basics</h2>
+  <div class="row">
+    <button id="bufferBtn">Click to buffer</button>
+    <div id="bufferLog" class="log"></div>
+  </div>
+  <p class="small">Demonstrates bufferTime (2s), bufferCount(3), and buffer with interval closing.</p>
+</section>
+
+<section>
+  <h2>Buffer Advanced</h2>
+  <div class="row">
+    <button id="bufferAdvBtn">Click to bufferToggle/When</button>
+    <div id="bufferAdvLog" class="log"></div>
+  </div>
+  <p class="small">Demonstrates bufferToggle and bufferWhen.</p>
+</section>
+
+<section>
+  <h2>Window Basics</h2>
+  <div class="row">
+    <div id="windowLog" class="log"></div>
+  </div>
+  <p class="small">Demonstrates windowTime and windowCount (source emits every 500ms).</p>
+</section>
+
+<section>
+  <h2>Window Advanced</h2>
+  <div class="row">
+    <div id="windowAdvLog" class="log"></div>
+  </div>
+  <p class="small">Demonstrates windowToggle and windowWhen.</p>
+</section>
+
+<section>
+  <h2>Session 7 — Buffer Basics</h2>
+  <div class="row">
+    <div id="bufArea" style="width:240px;height:120px;border:1px dashed #bbb;display:flex;align-items:center;justify-content:center;user-select:none;">Click here</div>
+    <button id="bufFlush">Flush</button>
+  </div>
+  <div class="row">
+    <div id="bufferLog" class="log"></div>
+    <div id="bufferCountLog" class="log"></div>
+    <div id="bufferTimeLog" class="log"></div>
+  </div>
+  <p class="small">Click inside the area to generate events. Use <code>Flush</code> to release the <code>buffer</code>. Others emit automatically.</p>
+</section>
+
+<section>
+  <h2>Session 7 — Buffer Advanced</h2>
+  <div class="row">
+    <div id="bufArea2" style="width:240px;height:120px;border:1px dashed #bbb;display:flex;align-items:center;justify-content:center;user-select:none;">Click here</div>
+    <button id="bufOpen">Open (1.5s window)</button>
+  </div>
+  <div class="row">
+    <div id="bufferToggleLog" class="log"></div>
+    <div id="bufferWhenLog" class="log"></div>
+  </div>
+  <p class="small"><code>bufferToggle</code> opens on click and closes after 1.5s. <code>bufferWhen</code> emits every 2s.</p>
+</section>
+
+<section>
+  <h2>Session 7 — Window Basics</h2>
+  <div class="row">
+    <button id="winSplit">Split window</button>
+  </div>
+  <div class="row">
+    <div id="windowLog" class="log"></div>
+    <div id="windowCountLog" class="log"></div>
+    <div id="windowTimeLog" class="log"></div>
+  </div>
+  <p class="small">Underlying source is <code>interval(300ms)</code>. Windows are flattened to arrays for readability.</p>
+</section>
+
+<section>
+  <h2>Session 7 — Window Advanced</h2>
+  <div class="row">
+    <button id="winOpen">Open (1.2s window)</button>
+  </div>
+  <div class="row">
+    <div id="windowToggleLog" class="log"></div>
+    <div id="windowWhenLog" class="log"></div>
+  </div>
+  <p class="small"><code>windowToggle</code> opens on click and closes after 1.2s. <code>windowWhen</code> closes every 1s.</p>
+</section>
+
+<section>
+  <h2>Session 7 — Window Consumption Patterns</h2>
+  <div class="row">
+    <div id="windowArraysLog" class="log"></div>
+    <div id="windowValuesLog" class="log"></div>
+  </div>
+  <p class="small">Compare flattening windows to arrays vs. streaming values directly with <code>mergeAll</code>.</p>
+</section>
+
+<section>
+  <h2>Session 8 — map & mapTo</h2>
+  <div class="row">
+    <input id="mapInput" placeholder="Type to map to UPPERCASE" />
+    <button id="mapBtn">Emit constant</button>
+    <div id="mapLog" class="log"></div>
+  </div>
+  <p class="small">Transforms values with <code>map</code> and replaces emissions with a constant using <code>mapTo</code>.</p>
+</section>
+
+<section>
+  <h2>Session 8 — mergeMap (concurrent)</h2>
+  <div class="row">
+    <button id="mergeMapBtn">Start inner stream</button>
+    <div id="mergeMapLog" class="log"></div>
+  </div>
+  <p class="small">Each click starts a new inner stream; values interleave concurrently.</p>
+</section>
+
+<section>
+  <h2>Session 8 — switchMap (cancel previous)</h2>
+  <div class="row">
+    <input id="switchInput" placeholder="Type fast to cancel previous" />
+    <div id="switchMapLog" class="log"></div>
+  </div>
+  <p class="small">Typing starts a short inner stream; new input cancels the previous one.</p>
+</section>
+
+<section>
+  <h2>Session 8 — concatMap (queue)</h2>
+  <div class="row">
+    <button id="concatMapBtn">Queue task</button>
+    <div id="concatMapLog" class="log"></div>
+  </div>
+  <p class="small">Each click enqueues a 3‑step task; tasks run strictly in order.</p>
+</section>
+
+<section>
+  <h2>Session 8 — exhaustMap (ignore while busy)</h2>
+  <div class="row">
+    <button id="exhaustMapBtn">Start long task</button>
+    <div id="exhaustMapLog" class="log"></div>
+  </div>
+  <p class="small">While the long task runs, further clicks are ignored.</p>
+</section>
+
+<section>
+  <h2>Session 8 — map & mapTo</h2>
+  <div class="row">
+    <input id="mapInput" placeholder="Type something" />
+    <div id="mapLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 8 — mergeMap</h2>
+  <div class="row">
+    <button id="mergeMapBtn">Click (mergeMap)</button>
+    <div id="mergeMapLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 8 — switchMap</h2>
+  <div class="row">
+    <button id="switchMapBtn">Click (switchMap)</button>
+    <div id="switchMapLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 8 — concatMap</h2>
+  <div class="row">
+    <button id="concatMapBtn">Click (concatMap)</button>
+    <div id="concatMapLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 8 — exhaustMap</h2>
+  <div class="row">
+    <button id="exhaustMapBtn">Click (exhaustMap)</button>
+    <div id="exhaustMapLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 9 — scan & mergeScan</h2>
+  <div class="row">
+    <button id="scanBtn">Increment (scan)</button>
+    <div id="scanLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="mergeScanBtn">Increment async (mergeScan)</button>
+    <div id="mergeScanLog" class="log"></div>
+  </div>
+  <p class="small"><code>scan</code> accumulates state synchronously; <code>mergeScan</code> handles async accumulation.</p>
+</section>
+
+<section>
+  <h2>Session 9 — pairwise & pluck</h2>
+  <div class="row">
+    <input id="pairSlider" type="range" min="0" max="100" value="50" />
+    <div id="pairwiseLog" class="log"></div>
+    <div id="pluckLog" class="log"></div>
+  </div>
+  <p class="small"><code>pairwise</code> emits previous & current values; <code>pluck</code> extracts a property path.</p>
+</section>
+
+<section>
+  <h2>Session 9 — groupBy</h2>
+  <div class="row">
+    <div id="groupByLog" class="log"></div>
+  </div>
+  <p class="small">Groups a stream of items by key, then flattens groups into arrays.</p>
+</section>
+
+<section>
+  <h2>Session 9 — expand</h2>
+  <div class="row">
+    <button id="expandBtn">Start expand</button>
+    <div id="expandLog" class="log"></div>
+  </div>
+  <p class="small"><code>expand</code> recursively emits new Observables until EMPTY.</p>
+</section>
+
+<section>
+  <h2>Session 9 — scan & mergeScan</h2>
+  <div class="row">
+    <button id="scanInc">Increment</button>
+    <div id="scanLog" class="log"></div>
+    <div id="mergeScanLog" class="log"></div>
+  </div>
+  <p class="small"><code>scan</code> accumulates synchronously; <code>mergeScan</code> accumulates via async inner Observables.</p>
+</section>
+
+<section>
+  <h2>Session 9 — pairwise & pluck</h2>
+  <div class="row">
+    <input id="pairSlider" type="range" min="0" max="100" value="50" />
+    <div id="pluckLog" class="log"></div>
+    <div id="pairwiseLog" class="log"></div>
+  </div>
+  <p class="small"><code>pluck</code> extracts properties (deprecated; prefer <code>map</code>), <code>pairwise</code> compares consecutive values.</p>
+</section>
+
+<section>
+  <h2>Session 9 — groupBy</h2>
+  <div class="row">
+    <button id="groupByRun">Group 8 items</button>
+    <div id="groupByLog" class="log"></div>
+  </div>
+  <p class="small">Groups items by category and logs grouped values.</p>
+</section>
+
+<section>
+  <h2>Session 9 — expand</h2>
+  <div class="row">
+    <button id="expandRun">Countdown from 4</button>
+    <div id="expandLog" class="log"></div>
+  </div>
+  <p class="small">Recursively emits values using <code>expand</code>.</p>
+</section>
+
+<section>
+  <h2>Session 10 — filter</h2>
+  <div class="row">
+    <button id="filterRun">Filter even numbers (1..10)</button>
+    <div id="filterLog" class="log"></div>
+  </div>
+  <p class="small"><code>filter</code> passes only values matching the predicate.</p>
+</section>
+
+<section>
+  <h2>Session 10 — first & last</h2>
+  <div class="row">
+    <button id="firstLastRun">Run</button>
+  </div>
+  <div class="row">
+    <div id="firstLog" class="log"></div>
+    <div id="lastLog" class="log"></div>
+  </div>
+  <p class="small"><code>first</code> emits immediately on first match; <code>last</code> waits until the source completes.</p>
+</section>
+
+<section>
+  <h2>Session 10 — single</h2>
+  <div class="row">
+    <button id="singleOk">Single (one match)</button>
+    <button id="singleErr">Single (multiple matches → error)</button>
+    <div id="singleLog" class="log"></div>
+  </div>
+  <p class="small"><code>single</code> expects exactly one match; otherwise errors.</p>
+</section>
+
+<section>
+  <h2>Session 10 — elementAt</h2>
+  <div class="row">
+    <button id="elementAtRun">elementAt(2) from 5 ticks</button>
+    <button id="elementAtDefault">elementAt(10, 'N/A')</button>
+    <div id="elementAtLog" class="log"></div>
+  </div>
+  <p class="small"><code>elementAt</code> gets the value at an index. With default, emits default if index is out of range (on completion).</p>
+</section>
+
+<section>
+  <h2>Session 11 — distinct</h2>
+  <div class="row">
+    <input id="distinctInput" placeholder="Type a number" />
+    <button id="distinctEmit">Emit</button>
+    <button id="distinctPlay">Play sample (1,2,2,3,1,4,3)</button>
+    <button id="distinctFlush">Flush</button>
+    <div id="distinctLog" class="log"></div>
+  </div>
+  <p class="small"><code>distinct</code> suppresses duplicates across the stream. Use <code>Flush</code> to reset its internal set.</p>
+</section>
+
+<section>
+  <h2>Session 11 — distinctUntilChanged</h2>
+  <div class="row">
+    <input id="ducInput" placeholder="Type; consecutive duplicates are suppressed" />
+    <div id="ducLog" class="log"></div>
+  </div>
+  <p class="small">Only emits when the input value changes from the previous one.</p>
+</section>
+
+<section>
+  <h2>Session 11 — distinctUntilKeyChanged</h2>
+  <div class="row">
+    <button id="dukRun">Emit objects</button>
+    <div id="dukLog" class="log"></div>
+  </div>
+  <p class="small">Emits only when the specified key changes (here: <code>id</code>).</p>
+</section>
+
+<section>
+  <h2>Session 11 — distinct</h2>
+  <div class="row">
+    <button id="distinctRun">Run distinct</button>
+    <div id="distinctLog" class="log"></div>
+  </div>
+  <p class="small"><code>distinct</code> suppresses duplicate values globally.</p>
+</section>
+
+<section>
+  <h2>Session 11 — distinctUntilChanged</h2>
+  <div class="row">
+    <button id="ducRun">Run distinctUntilChanged</button>
+    <div id="ducLog" class="log"></div>
+  </div>
+  <p class="small"><code>distinctUntilChanged</code> suppresses consecutive duplicates only.</p>
+</section>
+
+<section>
+  <h2>Session 11 — distinctUntilKeyChanged</h2>
+  <div class="row">
+    <button id="dukRun">Run distinctUntilKeyChanged</button>
+    <div id="dukLog" class="log"></div>
+  </div>
+  <p class="small"><code>distinctUntilKeyChanged</code> suppresses consecutive duplicates based on object key.</p>
+</section>
+
+<section>
+  <h2>Session 12 — debounceTime</h2>
+  <div class="row">
+    <input id="debounceInput" placeholder="Type here (emit after 500ms pause)" />
+    <div id="debounceLog" class="log"></div>
+  </div>
+  <p class="small">Emits only after the input stops for 500ms.</p>
+</section>
+
+<section>
+  <h2>Session 12 — throttleTime</h2>
+  <div class="row">
+    <button id="throttleBtn">Click repeatedly</button>
+    <div id="throttleLog" class="log"></div>
+  </div>
+  <p class="small">Emits first click, then ignores further clicks for 1 second.</p>
+</section>
+
+<section>
+  <h2>Session 12 — auditTime</h2>
+  <div class="row">
+    <button id="auditBtn">Click repeatedly</button>
+    <div id="auditLog" class="log"></div>
+  </div>
+  <p class="small">Ignores clicks for 1s, then emits the last click.</p>
+</section>
+
+<section>
+  <h2>Session 12 — debounce & debounceTime</h2>
+  <div class="row">
+    <input id="debounceInput" placeholder="Type to see debounced outputs" />
+  </div>
+  <div class="row">
+    <div id="debounceLog" class="log"></div>
+    <div id="debounceTimeLog" class="log"></div>
+  </div>
+  <p class="small">Dynamic <code>debounce</code> waits longer for longer input; <code>debounceTime(400ms)</code> waits a fixed time.</p>
+</section>
+
+<section>
+  <h2>Session 12 — throttle & throttleTime</h2>
+  <div class="row">
+    <div id="throttleArea" style="width:260px;height:120px;border:1px dashed #bbb;display:flex;align-items:center;justify-content:center;user-select:none;">Click rapidly here</div>
+  </div>
+  <div class="row">
+    <div id="throttleLog" class="log"></div>
+    <div id="throttleTimeLog" class="log"></div>
+  </div>
+  <p class="small"><code>throttle</code> emits the first then ignores for a time; <code>throttleTime</code> with trailing captures the last too.</p>
+</section>
+
+<section>
+  <h2>Session 12 — audit & auditTime</h2>
+  <div class="row">
+    <div id="auditArea" style="width:260px;height:120px;border:1px dashed #bbb;display:flex;align-items:center;justify-content:center;user-select:none;">Click rapidly here</div>
+  </div>
+  <div class="row">
+    <div id="auditLog" class="log"></div>
+    <div id="auditTimeLog" class="log"></div>
+  </div>
+  <p class="small"><code>audit</code>/<code>auditTime</code> emit the <em>last</em> value after the silence window.</p>
+</section>
+
+<section>
+  <h2>Session 13 — skip & take basics</h2>
+  <div class="row">
+    <button id="skipTakeRun">Run skip/take demos</button>
+    <div id="skipTakeLog" class="log"></div>
+  </div>
+  <p class="small">Shows <code>skip</code>, <code>take</code>, <code>skipLast</code>, <code>takeLast</code> on <code>range(1..10)</code>.</p>
+</section>
+
+<section>
+  <h2>Session 13 — skipUntil / skipWhile & takeUntil / takeWhile</h2>
+  <div class="row">
+    <button id="startNotifier">Start Notifier</button>
+    <button id="stopNotifier">Stop Notifier</button>
+  </div>
+  <div class="row">
+    <div id="skipUntilTakeUntilLog" class="log"></div>
+  </div>
+  <p class="small"><code>skipUntil</code>/<code>skipWhile</code> ignore early values, <code>takeUntil</code>/<code>takeWhile</code> complete early.</p>
+</section>
+
+<section>
+  <h2>Session 13 — ignoreElements</h2>
+  <div class="row">
+    <button id="ignoreElementsRun">Run ignoreElements</button>
+    <div id="ignoreElementsLog" class="log"></div>
+  </div>
+  <p class="small"><code>ignoreElements</code> ignores all values, only notifies on completion or error.</p>
+</section>
+
+<section>
+  <h2>Session 13 — sample & sampleTime</h2>
+  <div class="row">
+    <button id="sampleBtn">Sample Button</button>
+    <div id="sampleLog" class="log"></div>
+  </div>
+  <p class="small"><code>sample</code> emits latest value when notifier emits, <code>sampleTime</code> emits latest at fixed interval.</p>
+</section>
+
+<section>
+  <h2>Session 14 — mergeAll & concatAll</h2>
+  <div class="row">
+    <button id="mergeConcatBtn">Click to spawn inner Observables</button>
+  </div>
+  <div class="row">
+    <div id="mergeAllLog" class="log"></div>
+    <div id="concatAllLog" class="log"></div>
+  </div>
+  <p class="small"><code>mergeAll</code> flattens concurrently; <code>concatAll</code> queues inner Observables sequentially.</p>
+</section>
+
+<section>
+  <h2>Session 14 — switchAll & exhaustAll</h2>
+  <div class="row">
+    <button id="switchExhaustBtn">Click to spawn inner Observables</button>
+  </div>
+  <div class="row">
+    <div id="switchAllLog" class="log"></div>
+    <div id="exhaustAllLog" class="log"></div>
+  </div>
+  <p class="small"><code>switchAll</code> switches to the latest; <code>exhaustAll</code> ignores new inners until the current completes.</p>
+</section>
+
+<section>
+  <h2>Session 14 — combineLatestAll</h2>
+  <div class="row">
+    <button id="combineLatestAllBtn">Click to spawn inner Observables</button>
+  </div>
+  <div class="row">
+    <div id="combineLatestAllLog" class="log"></div>
+  </div>
+  <p class="small"><code>combineLatestAll</code> emits arrays of latest values from all active inner Observables.</p>
+</section>
+
+<section>
+  <h2>Session 14 — combineLatestAll</h2>
+  <div class="row">
+    <button id="claSpawn">Spawn inner (3 ticks)</button>
+    <div id="claLog" class="log"></div>
+  </div>
+  <p class="small">Each click starts a 3-tick inner stream. <code>combineLatestAll</code> emits arrays of the latest values across all active inners.</p>
+</section>
+
+<section>
+  <h2>Session 14 — concatAll</h2>
+  <div class="row">
+    <button id="concatAllSpawn">Spawn inner (3 ticks)</button>
+    <div id="concatAllLog" class="log"></div>
+  </div>
+  <p class="small">Queues each inner stream and runs them sequentially.</p>
+</section>
+
+<section>
+  <h2>Session 14 — exhaustAll</h2>
+  <div class="row">
+    <button id="exhaustAllSpawn">Spawn inner (4 ticks)</button>
+    <div id="exhaustAllLog" class="log"></div>
+  </div>
+  <p class="small">Ignores new inners while one is active.</p>
+</section>
+
+<section>
+  <h2>Session 14 — mergeAll</h2>
+  <div class="row">
+    <button id="mergeAllSpawn">Spawn inner (3 ticks)</button>
+    <div id="mergeAllLog" class="log"></div>
+  </div>
+  <p class="small">Runs inners concurrently; values interleave.</p>
+</section>
+
+<section>
+  <h2>Session 14 — switchAll</h2>
+  <div class="row">
+    <button id="switchAllSpawn">Spawn inner (5 ticks)</button>
+    <div id="switchAllLog" class="log"></div>
+  </div>
+  <p class="small">Switches to the latest inner, canceling the previous one.</p>
+</section>
+
+<section>
+  <h2>Session 15 — startWith</h2>
+  <div class="row">
+    <button id="startWithBtn">Click me</button>
+    <div id="startWithLog" class="log"></div>
+  </div>
+  <p class="small"><code>startWith</code> prepends initial values before source emissions.</p>
+</section>
+
+<section>
+  <h2>Session 15 — withLatestFrom</h2>
+  <div class="row">
+    <button id="wlfBtn">Click me</button>
+    <div id="wlfLog" class="log"></div>
+  </div>
+  <p class="small"><code>withLatestFrom</code> combines source emission with the latest from another Observable.</p>
+</section>
+
+<section>
+  <h2>Session 16 — multicast</h2>
+  <div class="row">
+    <button id="mcConnect">connect()</button>
+    <button id="mcSubA">Subscribe A</button>
+    <button id="mcSubB">Subscribe B</button>
+    <button id="mcReset">Reset</button>
+  </div>
+  <div class="row">
+    <div id="mcLogA" class="log"></div>
+    <div id="mcLogB" class="log"></div>
+  </div>
+  <p class="small">Manual sharing via <code>multicast(Subject)</code>; requires <code>connect()</code>.</p>
+</section>
+
+<section>
+  <h2>Session 16 — publish</h2>
+  <div class="row">
+    <button id="pubConnect">connect()</button>
+    <button id="pubSubA">Subscribe A</button>
+    <button id="pubSubB">Subscribe B</button>
+    <button id="pubReset">Reset</button>
+  </div>
+  <div class="row">
+    <div id="pubLogA" class="log"></div>
+    <div id="pubLogB" class="log"></div>
+  </div>
+  <p class="small"><code>publish()</code> is shorthand for <code>multicast(Subject)</code>.</p>
+</section>
+
+<section>
+  <h2>Session 16 — publishBehavior</h2>
+  <div class="row">
+    <button id="pbConnect">connect()</button>
+    <button id="pbSubA">Subscribe A</button>
+    <button id="pbSubB">Subscribe B</button>
+    <button id="pbReset">Reset</button>
+  </div>
+  <div class="row">
+    <div id="pbLogA" class="log"></div>
+    <div id="pbLogB" class="log"></div>
+  </div>
+  <p class="small">Late subscribers receive the latest value (or initial) immediately.</p>
+</section>
+
+<section>
+  <h2>Session 16 — publishLast</h2>
+  <div class="row">
+    <button id="plConnect">connect()</button>
+    <button id="plSubA">Subscribe A</button>
+    <button id="plSubB">Subscribe B</button>
+    <button id="plReset">Reset</button>
+  </div>
+  <div class="row">
+    <div id="plLogA" class="log"></div>
+    <div id="plLogB" class="log"></div>
+  </div>
+  <p class="small">Emits only the last value when the source completes.</p>
+</section>
+
+<section>
+  <h2>Session 16 — publishReplay</h2>
+  <div class="row">
+    <button id="prConnect">connect()</button>
+    <button id="prSubA">Subscribe A</button>
+    <button id="prSubB">Subscribe B</button>
+    <button id="prReset">Reset</button>
+  </div>
+  <div class="row">
+    <div id="prLogA" class="log"></div>
+    <div id="prLogB" class="log"></div>
+  </div>
+  <p class="small">Replays the last <code>n</code> values to new subscribers.</p>
+</section>
+
+<section>
+  <h2>Session 16 — share</h2>
+  <div class="row">
+    <button id="shareSubA">Subscribe A</button>
+    <button id="shareUnsubA">Unsub A</button>
+    <button id="shareSubB">Subscribe B</button>
+    <button id="shareUnsubB">Unsub B</button>
+    <button id="shareReset">Reset</button>
+  </div>
+  <div class="row">
+    <div id="shareLogA" class="log"></div>
+    <div id="shareLogB" class="log"></div>
+  </div>
+  <p class="small"><code>share()</code> auto-connects on first subscriber and disconnects when the last unsubscribes.</p>
+</section>
+
+<section>
+  <h2>Session 17 — catchError</h2>
+  <div class="row">
+    <button id="catchErrRun">Run catchError demo</button>
+    <div id="catchErrLog" class="log"></div>
+  </div>
+  <p class="small"><code>catchError</code> catches errors and replaces the Observable.</p>
+</section>
+
+<section>
+  <h2>Session 17 — retry</h2>
+  <div class="row">
+    <button id="retryRun">Run retry demo</button>
+    <div id="retryLog" class="log"></div>
+  </div>
+  <p class="small"><code>retry</code> automatically resubscribes up to N times when errors occur.</p>
+</section>
+
+<section>
+  <h2>Session 17 — retryWhen</h2>
+  <div class="row">
+    <button id="retryWhenRun">Run retryWhen demo</button>
+    <div id="retryWhenLog" class="log"></div>
+  </div>
+  <p class="small"><code>retryWhen</code> retries based on a notifier Observable, allowing backoff/delay logic.</p>
+</section>
+
+<section>
+  <h2>Session 17 — catchError</h2>
+  <div class="row">
+    <button id="catchRun">Run catchError demo</button>
+    <div id="catchLog" class="log"></div>
+  </div>
+  <p class="small"><code>catchError</code> recovers from an error by switching to a fallback Observable.</p>
+</section>
+
+<section>
+  <h2>Session 17 — retry</h2>
+  <div class="row">
+    <button id="retryRun">Run retry(2) demo</button>
+    <div id="retryLog" class="log"></div>
+  </div>
+  <p class="small"><code>retry(n)</code> resubscribes up to <code>n</code> times when the source errors.</p>
+</section>
+
+<section>
+  <h2>Session 17 — retryWhen</h2>
+  <div class="row">
+    <button id="retryWhenRun">Run retryWhen (exponential backoff)</button>
+    <div id="retryWhenLog" class="log"></div>
+  </div>
+  <p class="small"><code>retryWhen</code> uses a notifier to delay and control retries (here: exponential backoff).</p>
+</section>
+
+<section>
+  <h2>Session 18 — tap</h2>
+  <div class="row">
+    <button id="tapRun">Run tap demo</button>
+    <div id="tapLog" class="log"></div>
+  </div>
+  <p class="small"><code>tap</code> performs side-effects without altering the value.</p>
+</section>
+
+<section>
+  <h2>Session 18 — observeOn</h2>
+  <div class="row">
+    <button id="observeOnRun">Run observeOn demo</button>
+    <div id="observeOnLog" class="log"></div>
+  </div>
+  <p class="small"><code>observeOn</code> shifts downstream execution onto a scheduler.</p>
+</section>
+
+<section>
+  <h2>Session 18 — subscribeOn</h2>
+  <div class="row">
+    <button id="subscribeOnRun">Run subscribeOn demo</button>
+    <div id="subscribeOnLog" class="log"></div>
+  </div>
+  <p class="small"><code>subscribeOn</code> schedules the act of subscription itself.</p>
+</section>
+
+<section>
+  <h2>Session 18 — tap</h2>
+  <div class="row">
+    <input id="tapInput" placeholder="Type to see tap side-effects" />
+    <div id="tapLog" class="log"></div>
+  </div>
+  <p class="small"><code>tap</code> performs side-effects without changing the flowing values.</p>
+</section>
+
+<section>
+  <h2>Session 18 — observeOn(asyncScheduler)</h2>
+  <div class="row">
+    <button id="observeOnRun">Run</button>
+    <div id="observeOnLog" class="log"></div>
+  </div>
+  <p class="small"><code>observeOn</code> re-schedules downstream notifications asynchronously.</p>
+</section>
+
+<section>
+  <h2>Session 18 — subscribeOn(asyncScheduler)</h2>
+  <div class="row">
+    <button id="subOnSync">Subscribe (sync)</button>
+    <button id="subOnAsync">Subscribe (async)</button>
+    <div id="subscribeOnLog" class="log"></div>
+  </div>
+  <p class="small"><code>subscribeOn</code> schedules the <em>subscription</em> side (contrast with <code>observeOn</code>).</p>
+</section>
+
+
+<section>
+  <h2>Session 19 — delay & delayWhen</h2>
+  <div class="row">
+    <button id="delayBtn">Click (delay 1s)</button>
+    <div id="delayLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="delayWhenBtn">Click (delayWhen)</button>
+    <div id="delayWhenLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 19 — timeInterval & timestamp</h2>
+  <div class="row">
+    <button id="timeIntervalBtn">Click for timeInterval</button>
+    <div id="timeIntervalLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="timestampBtn">Click for timestamp</button>
+    <div id="timestampLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 20 — timeout & timeoutWith</h2>
+  <div class="row">
+    <button id="timeoutBtn">Click (<2s gaps)</button>
+    <div id="timeoutLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="timeoutWithBtn">Click (<2s gaps)</button>
+    <div id="timeoutWithLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 21 — materialize, dematerialize & toArray</h2>
+  <div class="row">
+    <button id="materializeBtn">Click (materialize)</button>
+    <div id="materializeLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="dematerializeBtn">Run dematerialize</button>
+    <div id="dematerializeLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="toArrayBtn">Click 3x (toArray)</button>
+    <div id="toArrayLog" class="log"></div>
+  </div>
+</section>
+
+
+
+<section>
+  <h2>Session 22 — Conditional & Boolean Operators</h2>
+  <div class="row">
+    <button id="defaultIfEmptyBtn">Run defaultIfEmpty</button>
+    <div id="defaultIfEmptyLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="everyBtn">Run every</button>
+    <div id="everyLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="findBtn">Run find</button>
+    <div id="findLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="findIndexBtn">Run findIndex</button>
+    <div id="findIndexLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="isEmptyBtn">Run isEmpty</button>
+    <div id="isEmptyLog" class="log"></div>
+  </div>
+</section>
+
+
+
+<section>
+  <h2>Session 23 — count</h2>
+  <div class="row">
+    <button id="countEmit">Emit</button>
+    <button id="countComplete">Complete</button>
+    <div id="countLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 23 — max & min</h2>
+  <div class="row">
+    <button id="mmEmit">Emit random number</button>
+    <button id="mmComplete">Complete</button>
+  </div>
+  <div class="row">
+    <div id="maxLog" class="log"></div>
+    <div id="minLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 23 — reduce</h2>
+  <div class="row">
+    <button id="reduceEmit">Emit random number</button>
+    <button id="reduceComplete">Complete</button>
+    <div id="reduceLog" class="log"></div>
+  </div>
+</section>
+
+
+
+<section>
+  <h2>Session 23 — Mathematical & Aggregate</h2>
+  <div class="row">
+    <input id="countInput" type="number" placeholder="number" />
+    <button id="countAdd">Add</button>
+    <button id="countComplete">Complete</button>
+  </div>
+  <div class="row">
+    <div id="countAllLog" class="log"></div>
+    <div id="countEvenLog" class="log"></div>
+  </div>
+  <div class="row">
+    <input id="reduceInput" type="number" placeholder="number" />
+    <button id="reduceAdd">Add to sum</button>
+    <button id="reduceComplete">Complete</button>
+    <div id="reduceLog" class="log"></div>
+  </div>
+  <div class="row">
+    <input id="mmInput" type="number" placeholder="number" />
+    <button id="mmAdd">Add</button>
+    <button id="mmComplete">Complete</button>
+  </div>
+  <div class="row">
+    <div id="maxLog" class="log"></div>
+    <div id="minLog" class="log"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Session 24 — Higher-Order Mapping (Advanced)</h2>
+  <div class="row">
+    <button id="switchScanStart">Start job (cancels previous)</button>
+    <div id="switchScanLog" class="log"></div>
+  </div>
+  <div class="row">
+    <button id="mmcSpawn">Spawn task (mergeMap concurrency=2)</button>
+    <div id="mmcLog" class="log"></div>
+  </div>
+</section>
+
+
+
+
+<section class="resources-section">
+  <h2>📚 Resources</h2>
+  <div class="resources-buttons">
+    <a href="docs/pitfalls.md" target="_blank">Pitfalls & Best Practices</a>
+    <a href="handbook/RxJS_Operator_Handbook_Full.pdf" target="_blank">Handbook (Full Edition PDF)</a>
+    <a href="handbook/RxJS_Operator_Handbook_Full_Linked.pdf" target="_blank">Handbook (Linked PDF)</a>
+  </div>
+</section>
+
+
+    <script type="module" src="/src/main.ts"></script>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.sidebar a');
+    const sections = [...links].map(link => document.querySelector(link.getAttribute('href')));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const index = sections.indexOf(entry.target);
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          if (index >= 0) links[index].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.2 });
+
+    sections.forEach(section => { if (section) observer.observe(section); });
+  });
+</script>
+
+</body>
+</html>

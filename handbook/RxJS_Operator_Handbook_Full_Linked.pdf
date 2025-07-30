@@ -1,0 +1,566 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 32 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/)
+>> /Border [ 0 0 0 ] /Rect [ 329.77 659.6 392.57 671.6 ] /Subtype /Link /Type /Annot
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#audit/audittime)
+>> /Border [ 0 0 0 ] /Rect [ 78 590.75 151.92 602.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#buffer/buffertime/buffercount/buffertoggle/bufferwhen)
+>> /Border [ 0 0 0 ] /Rect [ 78 578.75 344.8 590.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#catcherror)
+>> /Border [ 0 0 0 ] /Rect [ 78 566.75 124.12 578.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#combinelatest/combinelatestall)
+>> /Border [ 0 0 0 ] /Rect [ 78 554.75 227.51 566.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#concat/concatall/concatmap)
+>> /Border [ 0 0 0 ] /Rect [ 78 542.75 213.62 554.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#debounce/debouncetime)
+>> /Border [ 0 0 0 ] /Rect [ 78 530.75 196.4 542.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#defer)
+>> /Border [ 0 0 0 ] /Rect [ 78 518.75 100.79 530.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#delay/delaywhen)
+>> /Border [ 0 0 0 ] /Rect [ 78 506.75 160.26 518.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#distinct/distinctuntilchanged/distinctuntilkeychanged)
+>> /Border [ 0 0 0 ] /Rect [ 78 494.75 326.43 506.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#exhaustmap/exhaustall)
+>> /Border [ 0 0 0 ] /Rect [ 78 482.75 186.94 494.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#expand)
+>> /Border [ 0 0 0 ] /Rect [ 78 470.75 110.8 482.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+16 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#forkjoin)
+>> /Border [ 0 0 0 ] /Rect [ 78 458.75 113.01 470.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+17 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#groupby)
+>> /Border [ 0 0 0 ] /Rect [ 78 446.75 115.24 458.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+18 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#merge/mergeall/mergemap)
+>> /Border [ 0 0 0 ] /Rect [ 78 434.75 210.26 446.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+19 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#pairwise)
+>> /Border [ 0 0 0 ] /Rect [ 78 422.75 114.67 434.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+20 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#publish/multicast/publishreplay/publishbehavior/publishlast)
+>> /Border [ 0 0 0 ] /Rect [ 78 410.75 367.01 422.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+21 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#race)
+>> /Border [ 0 0 0 ] /Rect [ 78 398.75 97.45 410.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+22 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#scan/reduce/count)
+>> /Border [ 0 0 0 ] /Rect [ 78 386.75 170.83 398.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+23 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#share/sharereplay)
+>> /Border [ 0 0 0 ] /Rect [ 78 374.75 167.48 386.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+24 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#startwith/withlatestfrom)
+>> /Border [ 0 0 0 ] /Rect [ 78 362.75 194.14 374.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+25 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#switchmap/switchall/switchscan)
+>> /Border [ 0 0 0 ] /Rect [ 78 350.75 231.37 362.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+26 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#take,skip,elementat)
+>> /Border [ 0 0 0 ] /Rect [ 78 338.75 178.6 350.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+27 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#throttle/throttletime)
+>> /Border [ 0 0 0 ] /Rect [ 78 326.75 169.7 338.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+28 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#timeout/timeoutwith)
+>> /Border [ 0 0 0 ] /Rect [ 78 314.75 171.92 326.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+29 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#window)
+>> /Border [ 0 0 0 ] /Rect [ 78 302.75 115.23 314.75 ] /Subtype /Link /Type /Annot
+>>
+endobj
+30 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 
+  14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 
+  24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R ] /Contents 64 0 R /MediaBox [ 0 0 612 792 ] /Parent 63 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+31 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#audit/audittime)
+>> /Border [ 0 0 0 ] /Rect [ 78 698.25 189.244 716.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+32 0 obj
+<<
+/BaseFont /Symbol /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+33 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#buffer/buffertime/buffercount/buffertoggle/bufferwhen)
+>> /Border [ 0 0 0 ] /Rect [ 78 596.25 480.122 614.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+34 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#catcherror)
+>> /Border [ 0 0 0 ] /Rect [ 78 518.25 148.798 536.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+35 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#combinelatest/combinelatestall)
+>> /Border [ 0 0 0 ] /Rect [ 78 428.25 305.164 446.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+36 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#concat/concatall/concatmap)
+>> /Border [ 0 0 0 ] /Rect [ 78 350.25 282.61 368.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+37 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#debounce/debouncetime)
+>> /Border [ 0 0 0 ] /Rect [ 78 260.25 254.596 278.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+38 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#defer)
+>> /Border [ 0 0 0 ] /Rect [ 78 170.25 112.23 188.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+39 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#delay/delaywhen)
+>> /Border [ 0 0 0 ] /Rect [ 78 92.25 199.38 110.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+40 0 obj
+<<
+/Annots [ 31 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R ] /Contents 65 0 R /MediaBox [ 0 0 612 792 ] /Parent 63 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+41 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#distinct/distinctuntilchanged/distinctuntilkeychanged)
+>> /Border [ 0 0 0 ] /Rect [ 78 635.85 458.38 653.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+42 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#exhaustmap/exhaustall)
+>> /Border [ 0 0 0 ] /Rect [ 78 545.85 241.38 563.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+43 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#expand)
+>> /Border [ 0 0 0 ] /Rect [ 78 467.85 127.014 485.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+44 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#forkjoin)
+>> /Border [ 0 0 0 ] /Rect [ 78 389.85 133.23 407.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+45 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#groupby)
+>> /Border [ 0 0 0 ] /Rect [ 78 311.85 135.554 329.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+46 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#merge/mergeall/mergemap)
+>> /Border [ 0 0 0 ] /Rect [ 78 233.85 273.286 251.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+47 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#pairwise)
+>> /Border [ 0 0 0 ] /Rect [ 78 143.85 134.028 161.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+48 0 obj
+<<
+/Annots [ 41 0 R 42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R ] /Contents 66 0 R /MediaBox [ 0 0 612 792 ] /Parent 63 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+49 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#publish/multicast/publishreplay/publishbehavior/publishlast)
+>> /Border [ 0 0 0 ] /Rect [ 78 698.25 519.896 716.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+50 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#race)
+>> /Border [ 0 0 0 ] /Rect [ 78 608.25 106.798 626.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+51 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#scan/reduce/count)
+>> /Border [ 0 0 0 ] /Rect [ 78 518.25 217.272 536.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+52 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#share/sharereplay)
+>> /Border [ 0 0 0 ] /Rect [ 78 440.25 210.286 458.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+53 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#startwith/withlatestfrom)
+>> /Border [ 0 0 0 ] /Rect [ 78 350.25 254.568 368.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+54 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#switchmap/switchall/switchscan)
+>> /Border [ 0 0 0 ] /Rect [ 78 272.25 311.408 290.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+55 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#take,skip,elementat)
+>> /Border [ 0 0 0 ] /Rect [ 78 182.25 228.164 200.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+56 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#throttle/throttletime)
+>> /Border [ 0 0 0 ] /Rect [ 78 104.25 218.784 122.25 ] /Subtype /Link /Type /Annot
+>>
+endobj
+57 0 obj
+<<
+/Annots [ 49 0 R 50 0 R 51 0 R 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R ] /Contents 67 0 R /MediaBox [ 0 0 612 792 ] /Parent 63 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+58 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#timeout/timeoutwith)
+>> /Border [ 0 0 0 ] /Rect [ 78 659.85 221.108 677.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+59 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://hansschenker.github.io/rxjs-operator-tutorial/#window)
+>> /Border [ 0 0 0 ] /Rect [ 78 581.85 134.784 599.85 ] /Subtype /Link /Type /Annot
+>>
+endobj
+60 0 obj
+<<
+/Annots [ 58 0 R 59 0 R ] /Contents 68 0 R /MediaBox [ 0 0 612 792 ] /Parent 63 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+61 0 obj
+<<
+/PageMode /UseNone /Pages 63 0 R /Type /Catalog
+>>
+endobj
+62 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20250730103827+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20250730103827+00'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+63 0 obj
+<<
+/Count 5 /Kids [ 30 0 R 40 0 R 48 0 R 57 0 R 60 0 R ] /Type /Pages
+>>
+endobj
+64 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 902
+>>
+stream
+Gat=*_,B#A&A@6Wp)"Vb/DH#P,;:f'9rCp/bCtjj/%-@#1:#]Nhfg@o:`-4>R`n/Maklbmmn#9c!.Vrd(G3FJ#,bN*8-mle83DeR>JXl/H'j]LP=Z+>AV^lW=CB0K28RncF!c:4`@N0oe78kQPCk-ejW_OoXG#i_j7P!Om?jVO.elP'R7k)Aq_1_%C1nNq/@jn@_#8Ao`J0ZP7n8[>K^9O>r0[hIIDarXEXA-c%)'.1oAqt2n="3-fFlBT<ZW+'qncb;8SFo&B`<oUa]dAi5fm`:BT#a5H4?F9/f=;e&EpW1e#)AB?n"m$E41IcH2X%E[P-ZHk#(srmi_S<`K%'2W@;AHdC`m1f5Mmq^X0Y%GJ4Jj#iUTD?^bu6VK>([i"U!sn^^jr4E8sA5!hH7f1[@+(`84pc@m6kI[Q@!e\"T4eP%sU//J93VP(N!09q^CR<fp$Um>lC"^=i@luWT<qI`O_"H8mUnS`pZbHXSb5`"Uu$gjI'ObZq/QD7]=&SN7-1^rn.9Z^+YB@ajcpl[N,a\p1QOL=)EL]/Ug2&CrYA067:RPu$?'br7V%Y&(d],;u[eAE-iZ)0m,9RreJc2e$eM2*>.@u!RN1[Wu8!,JPlf93`\MEO'u.62M5:X6V8L[m#qQ.Zq]*Oh^O&+%.mo[(%A>]"cTgibFB&@3>HLA/+74u@Kr;L=5e7W2BfDP(57SCR6JQg/-mL!R@j78".=i0EX[1eKo9ckfY(DoKl8*bL,:KUaHILF;qe.[/\sj752b(*6fG2-'L5CEqOKS+3Mh;R1F3brsk0A,`2D:R!RTI6PZ[\>2m@a?t>L2sg;Bq@2nt@1@#B$g>g:<9W9G>q;n^rUAHpL[MR+GW8$";E:+=[>Tua:6`Q3'3d(]\NPD*(FHltPj@Pg~>endstream
+endobj
+65 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1446
+>>
+stream
+Gatm;9lK&M&A@7.bV=)r[NsUbh4/X)Rppq#YXKSnie(oYA@%CdKqtGhIsiF'O*irCC'99.MP<'dDr/.#6432grGPjPI@8L@-DW>i=\dqS5GHgAqDLE^3"*2GY9jrZ@k>W)i90b'%$-,>Sa]=0>p;E"GF>s(c:*pg9*=bb1Kj8Pc2OD>cgC]J4teK]@[Mn0fCO!hR=EP+\2B9X!cL2A`\2sn&B8^;7C/<*0<*S#.;^\piqFM\QdQdM<O!m_@d4]FfH*25U1"\FAaQCT/@\<?>$5F:mF1g"euBnm\)u1\k1AZl)uIb'(\40&@4Nh>M_jkB'>)]8g4GO)Id#-LqOMj>-`=oM6iFmA;QWB&A]cX`>6@rlVOeB2?-$c;i5o^WrKso;pLo$$rFQ!BQ)ZQDW^eE)hV`#@d_Is`a4i\Z9N+l&_D3\6UZ?S+-$IbL5gO4s9/F?H%Quj@K^lD_Nl)Q91jKQQ#.,7-f_61h<E%SK>AC]"So3De\E`X)4;f08lhK`N?))VMp5GZReH4$-+PFaR6`I"tWDuTFcqEe[D]B"[]'tG6T8QaO@==sd.$Qd2#1e@hrA3&iJOC591bu`Lq,&N)Z'n,7mGTHW"C68(`h^JKX)D/lh.\Q&/2!^^kQA-`GDh#eI470P%'='[L4DWW3JsocCcVS7>ocMis!dX`C,rM'E62.!"O;@:NCE+EN`",fjCQH-K$/F<oZ0J,&F'-N;Ht*@d?J>=\1<2B?bNSK.rsrTSpNVOKO?g8N2/2QYoq)BZ9F.@agrr<ZJls&)rjQc`V&Dgk]A%sLC:pgE$9Mc8qM6E>)h-?(?qhh7Pu)Y`@>>=+VL(J7f.`ZVgM4EP#d/l\)2VQMn3MoBc]]1A"3*3K2F#9_s,;6o7fb"2.%8V#5PVR`X6SO0MHjR4&::Vlq[Hihm[h@8!?ja?_QJ-`n^WohN.[NFf,nbIen@SMEaE/=9B!-b@s5BoKD,(;?#d%&8[87`1!3fCZmbg$u=Y$)qtg*E72;[rVk]KP]9K5\:LVW=R-l`W%q`.B\FkCc)>.cC!*guMZSi:&.mYiYPoJTfZSi`^!YP(2a:)17V>%'OptiILH*`HUWFZk7,nrJOg-^0\dlFn*]nC3UVi=87<U0QcT(Gp^k]cLf)WDC9Y.RXVHg8qR!"[W($=@)E4DXZJ6TVU#l[<8o-b6ICJ>O.5!pD^:St5@NcN.FaIr4l)HYaNLE@lTIt6L$UM[6Z@Ke-*k^!bqcm$KsWBhXMKlERgWu%LLYWS2)j'SKJf'.<:4iEO<5)CXIGFfPdnR5IOUQ5tD)o/AuQD(FlWSC,P\\:>+=dW13g.G@2jf]Fn-/L`1SOqr(q8##sVRB]D_r8^3lqMfp[&DsH[UD0VF3a11'9\m%ems6gHWfI<,KFiC@f9L2e8?5UJp"QS;/cO)BlH[f*Rb33`Z7.Y:P)lHl0LWWY4f=~>endstream
+endobj
+66 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1431
+>>
+stream
+Gatm;gMZ%0&:Ml+b[VjX@U3dt)t]h,1dKbHYQZ$5M]Y>[,E"9FW[&>2rV@"<3QOYJmOEp!>G<P:bab(W_\a`mM>_A?!8K-`i\lNNJOK`^G+QP0$iIFmqYM]/B?i/=G3(("fYij8ob"kQ5HPXK9?hpRM-hTLM]A?T'Rf)O@R>I",5B/p%CNKL<2U*\Vi[5nfIdD-o?%trA>2EnX3SR_a^pV\(0]9,"C#C9ehuen#6g<!//JB;,O0-*U,deD""YWU/sJ1uKA)h;L<,gukk!4Hq?AKChDOL$%AD4OYe356eihumP_T&sBU.MQ#.dsB@\]q1*kCO&0\:c.Aem]%L0H:^VmH_1W$/XX<n7W%065X/gu`.S[A`22/=<9s1M=Vkn['BfcaKFH`7%2a?$b6t:(EPCKaTkFhFhnZkF0LMQEQ)D^g6scLb[#+&<]+Fq>OMNjTdV&=<_6b+JL4q(dnZLg_oUk/oK.)b:JkAXFKeU")+o9H3\5f[^H[WIX2k?T&FcNS"*8do-l6!mf_(j4s#I6TDJUD<[2AgCgAAF9^Y/UMp,(H[EKI93b).lKkaeg;'/K!pcT!'W]D;H@FOAV;)QTf72>f#;Zb]<=\AeFhu"rl&4&>k1XkFF0lsgi8s@%]g]BCh(f!tK%4!X]GY+kG"d&/J,XGI&-l&1WLUKfncKR(l6B?aSq%KKC=!A<Lo8%i60\qUs,BD3F$+8nN!iqiC4JK39ZWd_uo96ge6&N"LkodsuCc[U9QH>d,ACJB^ZL#JfIO<Lo.+'OqQPGjW/gsASGX\V7RdO!2>V\riEUM"%gL)(G:c^A_hU$L7q-)MKXQ#\?BIl43kjcU"Cu*"?E.DB?`26>tFiSSA<rX_B&!E;dcGu#;J2Y.m/jij?qi^c$F;E["LM6V*30f!V'H/s<#;3f_OpSKpoqP&UXD=03f$Gq[!nP\FSu.8ZK"amU,9u[5g92cn=l,efNsG5#0^G2DPbf%QIJju[&KS_'KrJhf>\B8hn*pcSYd*/s9[g%Nc6l\'32]*p[5Y_UNg%T#IS%'IrE/2[Art"/.`Nd2Yg^)e/6jnCa=%dZ@]:?D^7Qp.Y"@b#U[S_h\&("0EhA.JooX$cl:&B(i@((oA3#b.5u(n,"TK:;>pJjqR:1oXG`]TaNQ89dO\o!Ks&;l,QNT!u@UDW4O,bescPX?^/(Mb)>".VR:2?*5%XoSOldO@jHp`iSkE3Mb-:mEF>n%;?/\VX>-ZJd(/&r.X$[BkT-]482Pro5\4NWp;f<2JY><r"aF@l,mUZ#>]d$`oc/<;)dq4.MFkJQZ,fdQPu`q>W:$uVIC;&q#+Vu"u2ZU5*(gjn)I[`.g+[('1HC'uGX_#Yj-oO>>6K)UuNp=87(4IZp]e-42jdkW:0mUSbnRmJVK:;Kq@P3.MEOU\]rbEF'SX/G(sNrB-3p&8t~>endstream
+endobj
+67 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1431
+>>
+stream
+Gatm;bAuW$&A7ljk)b4snjB4E[SFH(342a]C6Oo53Tr_q*/TJCJ.$mNPZ7WF%EO]>1gONpWfj%6X/EQa1Q6!t:DCOlP3CqX:+mfK@Toi])P)h#ECiAG%_`rOpLd661c_&`AAeZqB%@3s/DAtff9Ed<N9eAeB)WjbWkL*]c0:J8\o9D>emWtKrKXEMC``S*jBUJ4D&smf3<,'UJ'aqYnbe!b;bXM(^]N'XpiNm&^P4Z'U.*@[J2RmNO/_%:,2Gj*`Hf3oQb4*uAko1![4!Fp[8NO+AT)j]OAHf0ElI8i/_H4?9PfYGa-G&0:KgVV#OU`LdAub#1)R*O83nSLOC&F"fMH$u5Y+/rG.$EiR?LlQD5CDX&M%&fji]J#$^9g:7?qh;87dRjLYRPs:M)S#&n')&/BE_'*]6,s<dQrg47i8=mL,E,Zg0I@=41KqV6j9<eYbL.lk*ruZe9)a$C,X/E41_cBdqZE,GcE^imO>.)fG,+lEVnl0d<AUWKuKkk\"V)CZ7Q/W6rcXGk-St?FTM6^Kap=(&$9<`FHfodL%_$+ccQY%V4'7p,M=[[KV;&X5U-T)2hJGWcbM+#L2OpcJE'7-X.^MfA'NWWn?6FYMYj*XWV*>me%d'*1N*I.3-g=-u-2me;\'YR.NUXR!8[r+Cu^7RB-LPUPCu0JX'35>@P9(W+><JJ<O+L]>IbVD1)S>VN33(l]^@3Za/!>4d:AJ@bLVtjmnVEg,Y0trl<VUn&-1-MJR]X;^3fJ4caG$GQj.UMZOh135$.mIF^.p:[X9+6U<#bg2%#uoVS2SiE>pGothW>'jZ5O6Kh9Jf]Q$,jN3f.DRloO3:3dEMpLph5fR*TYe<SKoF*4^CYX;E\S@D'!'9!oE`BYTM[`QpA9Db;2s`Dl2VDk*l=)CoN;H=15??Ruk;&^C0Y2'(0Pkpc0`Jg>ULc*(MBc7FH80m"Uha&^Nki1V#jil/L<rG<9;#PB:iRIf,b-e$o[IP+m9E,O9A[kf5tDYkKNWK2-GB^g"t$=FPGfXu^pRYj$l[3HVh5KU!`#3a,V!.f_YO@*hQ=P%]=%`sGKo](Ho-2*C@WhGIHrg/7b-4E+iS&RP6u0[if&:U`T6.T&)?+KRk;[<h46G_bJR@5iJdN3#X95^Z[=iRRu0Y[,+FA&hMJtRD#jB9m4Tu*I%b7^nidESXR11;9SJ*=$#-_!"\HgJbomu\/#7*Rm:f!`(5ZWD/E4SWpQ*DPa9k.:E667NBUp6>BsTIenU($TnVF@G/l)P>&iT4mTj11=@;I<M>F6U$2t5,F+&\fE3$[$jPh&n7U/C)GothGW!uPj_deP$kmjuUE][/e!>P@i&I=f9Z__$i(I$_KShIm`bYrmh(W14go>iA20h/X[^eoudQ07=V-FWR1tC&C,t"Q!T:1V0lR9ZY(0al_QC%fQXXW<<)~>endstream
+endobj
+68 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 562
+>>
+stream
+Gatm7_/>`-&A@rkhQ]ML%2]LF:/080Q!1/PLj\H<2%4*OKr)CSOB(u24((!F&r/hPXb<!Kk.N]lL&aE0@!WRtE1LE['-IRC<=#=1K^:KYArC#Si09Y*8GnR53Ta*lZX7ZSE0%rFbn7pe:r3h)br^1,2-G^[Lr.8c/j0`SQB;-$1I<SEmP"Ce'E7'S'pRY;4/"X\#j9:].qi"J)<=mGqGOmu2O'ubjrOS'mV2J4fahWMW;IU,#O46^ZJ:E8+33D?r40P9@p^DV1A-o-I6!UdH\W>2\#jcF/:WnU@pdQ&5O[i<kpiCVkU*nr3\[S=:,o8"`GY!nX<l%:*hZ'Z&NX?j'^D&Bmo:5'Vb)Bbbtb^#J_`V0aI0rSVDcIi'L-_??%H26)hRM!#Uab1+o#''e9'DAlfNot(MALA-PnERl6+hZ&)J:9SG;:Biq1c2geQoGX`c+<X]m80.9YK.*u9;9j3?i3,=lLseRGVerQZ0JG*Ac/*lcS8=7F>95;`n8P*\f^:oX!JD)%Ql3\EZbAl%l\b#p-5bJBqP,.`/.i&^WlA1[]]nY8%*~>endstream
+endobj
+xref
+0 69
+0000000000 65535 f 
+0000000073 00000 n 
+0000000125 00000 n 
+0000000232 00000 n 
+0000000344 00000 n 
+0000000540 00000 n 
+0000000750 00000 n 
+0000000997 00000 n 
+0000001202 00000 n 
+0000001427 00000 n 
+0000001648 00000 n 
+0000001864 00000 n 
+0000002065 00000 n 
+0000002276 00000 n 
+0000002525 00000 n 
+0000002742 00000 n 
+0000002943 00000 n 
+0000003147 00000 n 
+0000003350 00000 n 
+0000003569 00000 n 
+0000003773 00000 n 
+0000004028 00000 n 
+0000004227 00000 n 
+0000004440 00000 n 
+0000004653 00000 n 
+0000004873 00000 n 
+0000005099 00000 n 
+0000005313 00000 n 
+0000005529 00000 n 
+0000005744 00000 n 
+0000005946 00000 n 
+0000006336 00000 n 
+0000006548 00000 n 
+0000006626 00000 n 
+0000006876 00000 n 
+0000007083 00000 n 
+0000007310 00000 n 
+0000007532 00000 n 
+0000007750 00000 n 
+0000007951 00000 n 
+0000008161 00000 n 
+0000008425 00000 n 
+0000008674 00000 n 
+0000008891 00000 n 
+0000009094 00000 n 
+0000009298 00000 n 
+0000009502 00000 n 
+0000009722 00000 n 
+0000009927 00000 n 
+0000010184 00000 n 
+0000010440 00000 n 
+0000010641 00000 n 
+0000010855 00000 n 
+0000011069 00000 n 
+0000011290 00000 n 
+0000011517 00000 n 
+0000011733 00000 n 
+0000011951 00000 n 
+0000012215 00000 n 
+0000012431 00000 n 
+0000012634 00000 n 
+0000012856 00000 n 
+0000012926 00000 n 
+0000013210 00000 n 
+0000013299 00000 n 
+0000014292 00000 n 
+0000015830 00000 n 
+0000017353 00000 n 
+0000018876 00000 n 
+trailer
+<<
+/ID 
+[<6948959b4bbcf416b38bf1802ddc3669><6948959b4bbcf416b38bf1802ddc3669>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 62 0 R
+/Root 61 0 R
+/Size 69
+>>
+startxref
+19529
+%%EOF
