@@ -1,7 +1,7 @@
 
 🌐 **Live Site:** [https://hansschenker.github.io/rxjs-operator-tutorial/](https://hansschenker.github.io/rxjs-operator-tutorial/)
 
-# RxJS Operator Tutorial
+# RxJS Operator Tutorial with ChatGPT support
 
 
 ## 📚 RxJS Operator Index (Sessions 1–24)
